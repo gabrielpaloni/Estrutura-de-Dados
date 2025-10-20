@@ -1,4 +1,4 @@
-package EDD.AULA08.ConjuntoArvoreBinaria.interfaces;
+package EDD.AULA08.interfaces;
 
 public interface Conjunto {
     boolean isEmpty();

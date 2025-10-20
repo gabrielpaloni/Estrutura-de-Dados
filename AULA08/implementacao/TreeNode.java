@@ -1,4 +1,4 @@
-package EDD.AULA08.ConjuntoArvoreBinaria.implementacao;
+package EDD.AULA08.implementacao;
 
 public class TreeNode {
     int valor;

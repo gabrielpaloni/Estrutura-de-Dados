@@ -1,5 +1,5 @@
-package EDD.AULA08.ConjuntoArvoreBinaria.implementacao;
-import EDD.AULA08.ConjuntoArvoreBinaria.interfaces.Conjunto;
+package EDD.AULA08.implementacao;
+import EDD.AULA08.interfaces.Conjunto;
 
 public class ArvoreBinaria implements Conjunto {
     int tamanho = 0;

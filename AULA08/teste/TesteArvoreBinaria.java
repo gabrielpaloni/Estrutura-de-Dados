@@ -1,7 +1,8 @@
-package EDD.AULA08.ConjuntoArvoreBinaria.teste;
-import EDD.AULA08.ConjuntoArvoreBinaria.implementacao.*;
-import EDD.AULA08.ConjuntoArvoreBinaria.interfaces.*;
-import EDD.AULA08.ConjuntoArvoreBinaria.implementacao.ArvoreBinaria;
+package EDD.AULA08.teste;
+import EDD.AULA08.implementacao.*;
+import EDD.AULA08.interfaces.*;
+import EDD.AULA08.implementacao.ArvoreBinaria;
+import EDD.AULA08.interfaces.Conjunto;
 
 public class TesteArvoreBinaria  {
     public static void main(String[] args) {
