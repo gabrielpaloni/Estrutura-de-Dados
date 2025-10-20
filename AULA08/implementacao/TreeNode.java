@@ -6,6 +6,6 @@ public class TreeNode {
     public TreeNode direita = null;
 
     public TreeNode(int e){
-        this.valor = 0;
+        this.valor = e;
     }
 }

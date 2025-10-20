@@ -1,6 +1,4 @@
 package EDD.AULA08.teste;
-import EDD.AULA08.implementacao.*;
-import EDD.AULA08.interfaces.*;
 import EDD.AULA08.implementacao.ArvoreBinaria;
 import EDD.AULA08.interfaces.Conjunto;
 

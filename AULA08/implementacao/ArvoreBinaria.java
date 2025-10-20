@@ -22,7 +22,8 @@ public class ArvoreBinaria implements Conjunto {
             tamanho++;
             return;
         }
-        if (e < raiz.valor) {
+        else if(raiz.valor==e) return;
+        else if (e < raiz.valor) {
             if (raiz.esquerda == null) {
                 raiz.esquerda = new TreeNode(e);
                 tamanho++;
@@ -30,26 +31,32 @@ public class ArvoreBinaria implements Conjunto {
             }
             addNode(e, raiz.esquerda);
         }
-        if (raiz.direita == null) {
-            raiz.direita = new TreeNode(e);
-            tamanho++;
+        else {
+            if (raiz.direita == null) {
+                raiz.direita = new TreeNode(e);
+                tamanho++;
+                return;
+            }
+            addNode(e, raiz.direita);
+        }
+    }
+
+    private void addNode(int e, TreeNode subArvore) {
+        if (subArvore.valor == e) {
             return;
         }
-        addNode(e, raiz.direita);
-        }
-
-    private void addNode(int e, TreeNode subArvore){
-        if (subArvore.valor == e){return;}
-        if(e < subArvore.valor){
-            if(subArvore.esquerda == null){
+        if (e < subArvore.valor) {
+            if (subArvore.esquerda == null) {
                 subArvore.esquerda = new TreeNode(e);
+                tamanho++;
                 return;
             }
             addNode(e, subArvore.esquerda);
         }
-        if(e > subArvore.valor){
-            if(subArvore.direita == null){
+        if (e > subArvore.valor) {
+            if (subArvore.direita == null) {
                 subArvore.direita = new TreeNode(e);
+                tamanho++;
                 return;
             }
             addNode(e, subArvore.direita);
@@ -58,33 +65,35 @@ public class ArvoreBinaria implements Conjunto {
 
     @Override
     public boolean contains(int e) {
-    if(raiz == null) return  false;
-        if (raiz.valor == e){return true;}
-        if(e < raiz.valor){
-            if(raiz.esquerda == null){
+        if (raiz == null) return false;
+        if (raiz.valor == e) {
+            return true;
+        }
+        if (e < raiz.valor) {
+            if (raiz.esquerda == null) {
                 return false;
             }
             return containsNode(e, raiz.esquerda);
-        }
-        else //if(e > raiz.valor){
-            if(raiz.direita == null){
+        } else // if(e > raiz.valor){
+            if (raiz.direita == null) {
                 return false;
             }
-            return containsNode(e, raiz.direita);
-        }
-
-    private static boolean containsNode(int e, TreeNode subArvore){
-        if (subArvore.valor == e){return true;}
-        if(e < subArvore.valor){
-            if(subArvore.esquerda == null){
-                return false;
-            }
-           return containsNode(e, subArvore.esquerda);
-        }
-        else //if(e > subArvore.valor){
-            if(subArvore.direita == null){
-                return false;
-            }
-            return containsNode(e, subArvore.direita);
-        }
+        return containsNode(e, raiz.direita);
     }
+
+    private static boolean containsNode(int e, TreeNode subArvore) {
+        if (subArvore.valor == e) {
+            return true;
+        }
+        if (e < subArvore.valor) {
+            if (subArvore.esquerda == null) {
+                return false;
+            }
+            return containsNode(e, subArvore.esquerda);
+        } else // if(e > subArvore.valor){
+            if (subArvore.direita == null) {
+                return false;
+            }
+        return containsNode(e, subArvore.direita);
+    }
+}
